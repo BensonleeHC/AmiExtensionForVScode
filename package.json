@@ -1,0 +1,73 @@
+{
+  "name": "AmiExtensionForVScode",
+  "displayName": "AmiExtensionForVScode",
+  "description": "file extensions for AMI BIOS",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sdl",
+      "aliases": ["AMI_SDL", "sdl"],
+      "extensions": ["sdl"],
+      "configuration": "./sdl_language-configuration.json"
+    },
+    {
+      "id": "uni",
+      "aliases": ["AMI_UNI", "uni"],
+      "extensions": ["uni"],
+      "configuration": "./uni_language-configuration.json"
+    },
+    {
+      "id": "asl",
+      "aliases": ["AMI_ASL", "asl"],
+      "extensions": ["asl"],
+      "configuration": "./asl_language-configuration.json"
+    },
+    {
+      "id": "vfr",
+      "aliases": ["AMI_VFR", "vfr"],
+      "extensions": ["vfr","sd","hfr"],
+      "configuration": "./vfr_language-configuration.json"
+    },
+    {
+      "id": "cif",
+      "aliases": ["AMI_CIF", "cif"],
+      "extensions": ["cif"],
+      "configuration": "./cif_language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sdl",
+      "scopeName": "source.sdl",
+      "path": "./syntaxes/sdl.tmLanguage.json"
+    },
+    {
+      "language": "uni",
+      "scopeName": "source.uni",
+      "path": "./syntaxes/uni.tmLanguage.json"
+    },
+    {
+      "language": "asl",
+      "scopeName": "source.asl",
+      "path": "./syntaxes/asl.tmLanguage.json"
+    },
+    {
+      "language": "vfr",
+      "scopeName": "source.vfr",
+      "path": "./syntaxes/vfr.tmLanguage.json"
+    },
+    {
+      "language": "cif",
+      "scopeName": "source.cif",
+      "path": "./syntaxes/cif.tmLanguage.json"
+    }]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BensonleeHC/AmiExtensionForVScode.git"
+  }
+}
