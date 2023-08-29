@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_UNI",
+	"patterns": [
+		{
+			"include": "#comments2"			
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#TokenType"			
+		},
+		{
+			"include": "#STR_TOKEN"			
+		},
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#comments"			
+		},
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.uni",
+				"match": "\\b(include|langdef|string|language|x-AMI)\\b"
+			}]
+		},
+		"TokenType": {
+			"patterns": [{
+				"name": "keyword.control.uni",
+				"match": "\\b(Boolean|Integer|Expression|Yes|No)\\b"
+			}]
+		},
+		"STR_TOKEN": {
+			"patterns": [{
+				"name": "keyword.uni",
+				"match": "STR_[a-zA-Z_]{0,}\b"
+			}]
+		},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.uni",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.uni",
+			"begin": "\/\/",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.uni",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments2": {
+			"name": "comment.line.uni",
+			"begin": "\/*",
+			"end": "*\/",
+			"patterns": [
+				{
+					"name": "constant.character.escape.uni",
+					"match": ""
+				}
+			]
+		}
+	},
+	"scopeName": "source.uni"
+}

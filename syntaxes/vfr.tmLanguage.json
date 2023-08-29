@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_VFR",
+	"patterns": [
+		{
+			"include": "#PreProcess_keywords"
+		},
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#ASLkeywords"			
+		},
+		{
+			"include": "#comments"			
+		}
+	],
+	"repository": {
+		"PreProcess_keywords": {
+			"patterns": [{
+				"name": "keyword.control.vfr",
+				"match": "(#ifdef|#endif|#define|#undef|#include|defined|#if|#else)"
+			}]
+		},
+		"ASLkeywords": {
+			"patterns": [{
+				"name": "keyword.control.vfr",
+				"match": "\\b(form|formset|formid|endform|endformset|AUTO_ID|title|STRING_TOKEN|goto|prompt|help|suppressif|endif|defaultstore|SEPARATOR|default|flags|date|enddate|numeric|varid|minimum|maximum|step|endnumeri|text|key|SUBTITLE|INTERACTIVE_TEXT|oneof|option|value|endoneof|class|subclass|varstore|guid|SUBTITLE|ideqval|NOT|checkbox|endcheckbox|inconsistentif|INTERACTIVE|grayoutif)\\b"
+			}]
+		},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.vfr",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.vfr",
+			"begin": "\/\/",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.vfr",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.vfr"
+}

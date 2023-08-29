@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_SDL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#TokenType"			
+		},
+		{
+			"include": "#comments"			
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.sdl",
+				"match": "\\b(End|TOKEN|PCIDEVICE|ELINK|PATH|OUTPUTREGISTER|INFComponent|LibraryMapping|FFS_FILE|FD_AREA|PcdMapping)\\b"
+			}]
+		},
+		"TokenType": {
+			"patterns": [{
+				"name": "keyword.control.sdl",
+				"match": "\\b(Boolean|Integer|Expression|Yes|No)\\b"
+			}]
+		},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sdl",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.sdl",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sdl",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.sdl"
+}

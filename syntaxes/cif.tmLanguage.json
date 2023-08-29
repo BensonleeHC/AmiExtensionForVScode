@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_CIF",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#keywords2"
+		},
+		{
+			"include": "#componentAtt"			
+		},
+		{
+			"include": "#categoryType"
+		},
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#comments"			
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cif",
+				"match": "<(component|endComponent)>"
+			}]
+		},
+		"keywords2": {
+			"patterns": [{
+				"name": "keyword.control.cif",
+				"match": "[(INF|files|parts)]"
+			}]
+		},
+		"componentAtt": {
+			"patterns": [{
+				"name": "keyword.control.cif",
+				"match": "(name|category|LocalRoot|RefName|Rank)"
+				}]
+			},
+		"categoryType": {
+			"patterns": [{
+				"name": "keyword.control.cif",
+				"match": "(ModulePart|eBoard|Flavor)"
+				}]
+			},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cif",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.cif",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cif",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.cif"
+}
