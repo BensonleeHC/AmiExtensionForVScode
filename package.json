@@ -1,11 +1,16 @@
 {
   "name": "AmiExtensionForVScode",
+	"publisher": "BensonHC-Lee",
   "displayName": "AmiExtensionForVScode",
   "description": "file extensions for AMI BIOS",
   "version": "0.0.2",
   "engines": {
     "vscode": "^1.81.0"
   },
+  "author": {
+		"name": "Benson Lee"
+	},
+
   "categories": [
     "Programming Languages"
   ],
