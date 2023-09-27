@@ -5,7 +5,7 @@
   "description": "file extensions for AMI BIOS",
   "version": "0.0.2",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.82.2"
   },
   "author": {
 		"name": "Benson Lee"
@@ -30,7 +30,7 @@
     {
       "id": "asl",
       "aliases": ["AMI_ASL", "asl"],
-      "extensions": ["asl"],
+      "extensions": ["asl","asi"],
       "configuration": "./asl_language-configuration.json"
     },
     {
