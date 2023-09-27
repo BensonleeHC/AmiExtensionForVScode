@@ -3,10 +3,10 @@
 	"name": "AMI_CIF",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#strings2"
 		},
 		{
-			"include": "#keywords2"
+			"include": "#keywords"
 		},
 		{
 			"include": "#componentAtt"			
@@ -15,7 +15,7 @@
 			"include": "#categoryType"
 		},
 		{
-			"include": "#strings2"
+			"include": "#keywords2"
 		},
 		{
 			"include": "#comments"			
@@ -25,27 +25,27 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.cif",
-				"match": "<(component|endComponent)>"
+				"match": "\\b(component|endComponent)\\b"
 			}]
 		},
 		"keywords2": {
 			"patterns": [{
 				"name": "keyword.control.cif",
-				"match": "[(INF|files|parts)]"
+				"match": "\\b(INF|files|parts|dependency)\\b"
 			}]
 		},
 		"componentAtt": {
 			"patterns": [{
 				"name": "keyword.control.cif",
-				"match": "(name|category|LocalRoot|RefName|Rank)"
-				}]
-			},
+				"match": "\\b(name|category|LocalRoot|RefName|Rank)\\b"
+			}]
+		},
 		"categoryType": {
 			"patterns": [{
 				"name": "keyword.control.cif",
-				"match": "(ModulePart|eBoard|Flavor)"
-				}]
-			},
+				"match": "\\b(ModulePart|eBoard|Flavor|eModule)\\b"
+			}]
+		},
 		"strings2": {
 			"name": "string",
 			"begin": "\"",
