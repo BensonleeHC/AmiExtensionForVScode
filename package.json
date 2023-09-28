@@ -46,6 +46,12 @@
       "configuration": "./fdf_language-configuration.json"
     },
     {
+      "id": "dec",
+      "aliases": ["AMI_DEC", "dec"],
+      "extensions": ["dec","inf"],
+      "configuration": "./dec_language-configuration.json"
+    },
+    {
       "id": "cif",
       "aliases": ["AMI_CIF", "cif"],
       "extensions": ["cif"],
@@ -70,6 +76,11 @@
       "language": "vfr",
       "scopeName": "source.vfr",
       "path": "./syntaxes/vfr.tmLanguage.json"
+    },
+    {
+      "language": "dec",
+      "scopeName": "source.dec",
+      "path": "./syntaxes/dec.tmLanguage.json"
     },
     {
       "language": "fdf",
