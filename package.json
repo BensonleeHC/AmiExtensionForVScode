@@ -40,6 +40,12 @@
       "configuration": "./vfr_language-configuration.json"
     },
     {
+      "id": "fdf",
+      "aliases": ["AMI_FDF", "fdf"],
+      "extensions": ["fdf"],
+      "configuration": "./fdf_language-configuration.json"
+    },
+    {
       "id": "cif",
       "aliases": ["AMI_CIF", "cif"],
       "extensions": ["cif"],
@@ -64,6 +70,11 @@
       "language": "vfr",
       "scopeName": "source.vfr",
       "path": "./syntaxes/vfr.tmLanguage.json"
+    },
+    {
+      "language": "fdf",
+      "scopeName": "source.fdf",
+      "path": "./syntaxes/fdf.tmLanguage.json"
     },
     {
       "language": "cif",
