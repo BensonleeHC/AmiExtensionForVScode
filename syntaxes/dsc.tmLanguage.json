@@ -1,0 +1,148 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_DSC",
+	"patterns": [
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#INF_keywords"
+		},
+		{
+			"include": "#dsc_keywords"
+		},
+		{
+			"include": "#INF_Defines_Keyword"
+		},
+		{
+			"include": "#dsc_PCD_DEFINITION"
+		},
+		{
+			"include": "#dsc_PCD_DEFINITION_2"
+		},
+		{
+			"include": "#dsc_GUID_DEFINITION"
+		},
+		{
+			"include": "#LibraryClass_Definition"
+		},
+		{
+			"include": "#comments"			
+		},
+		{
+			"include": "#dsc_Defines_Keyword"
+		},
+		{
+			"include": "#dsc_customize_Defines_Keyword"
+		}
+	],
+	"repository": {
+		"INF_keywords": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "(UserExtensions|Protocols|Ppis|Guids|Binaries|Depex|Defines|BuildOptions|LibraryClasses|Packages|Sources|Pcd)\\N*"
+			}]
+		},
+		"dsc_keywords": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "(Header|Defines|Includes|LibraryClass|Guids|Protocols|Ppis|Pcd|UserExtensions|SkuIds|Components)\\N*"
+			}]
+		},
+		"dsc_PCD_DEFINITION": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(\\w*\\.\\w*)\\|\\s*(\\w*)",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"dsc_PCD_DEFINITION_2": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(\\w*\\.\\w*)\\|\\s*(\\{\\s*(\\s*0x[0-9a-fA-F]{1,2}\\s*,){15}\\s*0x[0-9a-fA-F]{1,2}\\s*\\})",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"dsc_GUID_DEFINITION": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(\\w*)\\s*=\\s*(\\{\\s*0x[0-9a-fA-F]{7,8}\\s*,\\s*0x[0-9a-fA-F]{3,4}\\s*,\\s*0x[0-9a-fA-F]{3,4}\\s*,\\s*\\{(\\s*0x[0-9a-fA-F]{1,2}\\s*,){7}\\s*0x[0-9a-fA-F]{1,2}\\s*\\}\\s*\\})",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" },
+					"3": { "name": "constant.language.dsc" },
+					"4": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"INF_Defines_Keyword": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(INF_VERSION|BASE_NAME|FILE_GUID|MODULE_TYPE|UEFI_SPECIFICATION_VERSION|PI_SPECIFICATION_VERSION|LIBRARY_CLASS|BUILD_NUMBER|VERSION_STRING|PCD_IS_DRIVER|ENTRY_POINT|UNLOAD_IMAGE|CONSTRUCTOR|DESTRUCTOR|SHADOW|CUSTOM_MAKEFILE|DPX_SOURCE|SPEC|MODULE_UNI_FILE)\\s*=\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"dsc_Defines_Keyword": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(DSC_SPECIFICATION|PLATFORM_NAME|PLATFORM_GUID|PLATFORM_VERSION|SKUID_IDENTIFIER|SUPPORTED_ARCHITECTURES|BUILD_TARGETS|OUTPUT_DIRECTORY|FLASH_DEFINITION|BUILD_NUMBER|RFC_LANGUAGES|ISO_LANGUAGES|TIME_STAMP_FILE|VPD_TOOL_GUID|PCD_VAR_CHECK_GENERATION|PREBUILD|POSTBUILD)\\s*=\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"dsc_customize_Defines_Keyword": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(\\w*)\\s*=\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"LibraryClass_Definition": {
+			"patterns": [{
+				"name": "keyword.control.dsc",
+				"match": "\\s*(\\w*)\\s*\\|\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.dsc" },
+					"2": { "name": "constant.numeric.dsc" }
+				}
+			}]
+		},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dsc",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.dsc",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dsc",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.dsc"
+}

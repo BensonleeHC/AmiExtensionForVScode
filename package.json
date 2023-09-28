@@ -46,6 +46,12 @@
       "configuration": "./fdf_language-configuration.json"
     },
     {
+      "id": "dsc",
+      "aliases": ["AMI_DSC", "dsc"],
+      "extensions": ["dsc"],
+      "configuration": "./dsc_language-configuration.json"
+    },
+    {
       "id": "dec",
       "aliases": ["AMI_DEC", "dec"],
       "extensions": ["dec","inf"],
@@ -81,6 +87,11 @@
       "language": "dec",
       "scopeName": "source.dec",
       "path": "./syntaxes/dec.tmLanguage.json"
+    },
+    {
+      "language": "dsc",
+      "scopeName": "source.dsc",
+      "path": "./syntaxes/dsc.tmLanguage.json"
     },
     {
       "language": "fdf",
