@@ -45,7 +45,7 @@
 			"end": "\n",
 			"patterns": [
 				{
-					"name": "constant.character.escape.sdl",
+					"name": "comment.line.sdl",
 					"match": "\\\\."
 				}
 			]
