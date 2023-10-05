@@ -4,7 +4,7 @@
   "displayName": "AmiExtensionForVScode",
   "description": "file extensions for AMI BIOS",
   "icon": "./images/icon_ami_bios.jpg",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.82.2"
   },

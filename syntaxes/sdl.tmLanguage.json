@@ -19,7 +19,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.sdl",
-				"match": "\\b(End|TOKEN|PCIDEVICE|ELINK|PATH|OUTPUTREGISTER|INFComponent|LibraryMapping|FFS_FILE|FD_AREA|PcdMapping)\\b"
+				"match": "\\b(End|TOKEN|PCIDEVICE|ELINK|PATH|OUTPUTREGISTER|INFComponent|LibraryMapping|FFS_FILE|FD_AREA|PcdMapping|MODULE)\\b"
 			}]
 		},
 		"TokenType": {
