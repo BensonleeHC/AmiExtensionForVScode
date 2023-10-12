@@ -9,6 +9,9 @@
 			"include": "#INF_keywords"
 		},
 		{
+			"include": "#PCD_KEYWORDS"
+		},
+		{
 			"include": "#DEC_keywords"
 		},
 		{
@@ -31,19 +34,27 @@
 		"INF_keywords": {
 			"patterns": [{
 				"name": "keyword.control.dec",
-				"match": "(UserExtensions|Protocols|Ppis|Guids|Binaries|Depex|Defines|BuildOptions|LibraryClasses|Packages|Sources|Pcd)\\N*"
+				"match": "(UserExtensions|Protocols|Ppis|Guids|Binaries|Depex|Defines|BuildOptions|LibraryClasses|Packages|Sources)\\N*"
 			}]
 		},
 		"DEC_keywords": {
 			"patterns": [{
 				"name": "keyword.control.dec",
-				"match": "(Header|Defines|Includes|LibraryClass|Guids|Protocols|Ppis|Pcd|UserExtensions)\\N*"
+				"match": "(Header|Defines|Includes|LibraryClass|Guids|Protocols|Ppis|UserExtensions|PPIs)\\N*"
 			}]
+		},
+		"PCD_KEYWORDS":{
+			"patterns": [{
+				"name": "keyword.control.dec",
+				"match": "(PcdsFeatureFlag|PcdsFixedAtBuild|PcdsPatchableInModule|PcdsDynamicEx|PcdsDynamic)"
+			}
+			]
+
 		},
 		"DEC_PCD_DEFINITION": {
 			"patterns": [{
 				"name": "keyword.control.dec",
-				"match": "\\s*(\\w*.\\w*).(\\w*).(BOOLEAN|UINT8|UINT16|UINT32|UINT64|VOID*).(\\N*)",
+				"match": "\\s*(\\w*\\.\\w*)\\s*\\|\\s*(\\N*)\\s*\\|\\s*(BOOLEAN|UINT8|UINT16|UINT32|UINT64|VOID*)\\s*.\\s*(\\N*)\\s*",
 				"captures": {
 					"1": { "name": "variable.parameter.dec" },
 					"2": { "name": "constant.numeric.dec" },
