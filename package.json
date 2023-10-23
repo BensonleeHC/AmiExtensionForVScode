@@ -56,8 +56,14 @@
     {
       "id": "dec",
       "aliases": ["AMI_DEC", "dec"],
-      "extensions": ["dec","inf"],
+      "extensions": ["dec"],
       "configuration": "./dec_language-configuration.json"
+    },
+    {
+      "id": "inf",
+      "aliases": ["AMI_INF", "inf"],
+      "extensions": ["inf"],
+      "configuration": "./inf_language-configuration.json"
     },
     {
       "id": "cif",
@@ -89,6 +95,11 @@
       "language": "dec",
       "scopeName": "source.dec",
       "path": "./syntaxes/dec.tmLanguage.json"
+    },
+    {
+      "language": "inf",
+      "scopeName": "source.inf",
+      "path": "./syntaxes/inf.tmLanguage.json"
     },
     {
       "language": "dsc",

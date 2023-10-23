@@ -1,0 +1,122 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMI_INF",
+	"patterns": [
+		{
+			"include": "#strings2"
+		},
+		{
+			"include": "#INF_keywords"
+		},
+		{
+			"include": "#PCD_KEYWORDS"
+		},
+		{
+			"include": "#DEC_keywords"
+		},
+		{
+			"include": "#INF_Defines_Keyword"
+		},
+		{
+			"include": "#DEC_PCD_DEFINITION"
+		},
+		{
+			"include": "#DEC_GUID_DEFINITION"
+		},
+		{
+			"include": "#comments"			
+		},
+		{
+			"include": "#DEC_Defines_Keyword"
+		}
+	],
+	"repository": {
+		"INF_keywords": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "(UserExtensions|Protocols|Ppis|Guids|Binaries|Depex|Defines|BuildOptions|LibraryClasses|Packages|Sources)\\N*"
+			}]
+		},
+		"DEC_keywords": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "(Header|Defines|Includes|LibraryClass|Guids|Protocols|Ppis|UserExtensions|PPIs)\\N*"
+			}]
+		},
+		"PCD_KEYWORDS":{
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "(PcdsFeatureFlag|PcdsFixedAtBuild|PcdsPatchableInModule|PcdsDynamicEx|PcdsDynamic)"
+			}
+			]
+
+		},
+		"DEC_PCD_DEFINITION": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "\\s*(\\w*\\.\\w*)\\s*\\|\\s*(\\N*)\\s*\\|\\s*(BOOLEAN|UINT8|UINT16|UINT32|UINT64|VOID*)\\s*.\\s*(\\N*)\\s*",
+				"captures": {
+					"1": { "name": "variable.parameter.inf" },
+					"2": { "name": "constant.numeric.inf" },
+					"3": { "name": "constant.language.inf" },
+					"4": { "name": "constant.numeric.inf" }
+				}
+			}]
+		},
+		"DEC_GUID_DEFINITION": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "\\s*(\\w*)\\s*=\\s*(\\{\\s*0x[0-9a-fA-F]{7,8}\\s*,\\s*0x[0-9a-fA-F]{3,4}\\s*,\\s*0x[0-9a-fA-F]{3,4}\\s*,\\s*\\{(\\s*0x[0-9a-fA-F]{1,2}\\s*,){7}\\s*0x[0-9a-fA-F]{1,2}\\s*\\}\\s*\\})",
+				"captures": {
+					"1": { "name": "variable.parameter.inf" },
+					"2": { "name": "constant.numeric.inf" },
+					"3": { "name": "constant.language.inf" },
+					"4": { "name": "constant.numeric.inf" }
+				}
+			}]
+		},
+		"INF_Defines_Keyword": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "\\s*(INF_VERSION|BASE_NAME|FILE_GUID|MODULE_TYPE|UEFI_SPECIFICATION_VERSION|PI_SPECIFICATION_VERSION|LIBRARY_CLASS|BUILD_NUMBER|VERSION_STRING|PCD_IS_DRIVER|ENTRY_POINT|UNLOAD_IMAGE|CONSTRUCTOR|DESTRUCTOR|SHADOW|CUSTOM_MAKEFILE|DPX_SOURCE|SPEC|MODULE_UNI_FILE)\\s*=\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.inf" },
+					"2": { "name": "constant.numeric.inf" }
+				}
+			}]
+		},
+		"DEC_Defines_Keyword": {
+			"patterns": [{
+				"name": "keyword.control.inf",
+				"match": "\\s*(DEC_SPECIFICATION|PACKAGE_NAME|PACKAGE_GUID|PACKAGE_VERSION|PACKAGE_UNI_FILE)\\s*=\\s*(\\N*)",
+				"captures": {
+					"1": { "name": "variable.parameter.inf" },
+					"2": { "name": "constant.numeric.inf" }
+				}
+			}]
+		},
+		"strings2": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.inf",
+					"match": ""
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.inf",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.inf",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.inf"
+}
